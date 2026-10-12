@@ -1,0 +1,8 @@
+# Direct runtime versions used for the 0.1.0 Windows acceptance run.
+# Install using: python -m pip install -c requirements-runtime.txt .
+fastapi==0.143.0
+starlette==1.7.0
+pydantic==2.14.1
+pydantic-core==2.50.1
+uvicorn==0.54.0
+pypdf==6.20.0

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LitScout · 文献全文工作台</title><link rel="stylesheet" href="sidepanel.css"></head>
+<body>
+<header class="masthead"><a class="brand" href="https://litscout.zeabur.app/" target="_blank" rel="noopener noreferrer" title="访问 LitScout 官网"><span class="brand-symbol" aria-hidden="true">L<span>↗</span></span><div><strong>LitScout</strong><span class="eyebrow">批量下载 / DOWNLOAD</span></div></a><span id="connection" class="connection">连接中</span></header>
+<main>
+<section class="notification-settings" aria-label="任务提醒设置"><div class="notification-controls"><label><input id="desktopNotifications" type="checkbox" checked>桌面提醒</label><button id="testNotification" type="button" class="text-button">测试提醒 ↗</button></div><p id="notificationStatus" role="status">接收任务和需要人工处理时提醒。</p></section>
+<section id="pairPanel" hidden class="pair-panel"><span class="eyebrow">CONNECT YOUR BROWSER</span><h1>论文在这里，<br>阅读从全文开始。</h1><p>连接本机 Agent，让它把选中的文献交给当前 Edge / Chrome。</p>
+<form id="pairForm"><label>本机服务<input id="endpoint" value="http://127.0.0.1:57133" required></label><label>浏览器名称<input id="name" value="校园网浏览器" maxlength="80" required></label><label>一次性配对码<input id="code" type="password" autocomplete="off" required></label><div class="actions"><button type="submit" class="primary">连接此浏览器 ↗</button><button id="closeSettings" type="button" class="quiet">返回任务</button></div></form></section>
+<section id="tasksPanel" hidden>
+<div class="section-label"><span>YOUR READING QUEUE</span><button id="refresh" class="text-button" type="button">刷新 / 接单 ↻</button></div>
+<label class="task-picker">当前任务<select id="taskSelect" aria-label="按名称选择任务"></select></label>
+<div id="emptyState" hidden class="empty"><span class="empty-symbol">↗</span><h1>等待第一份阅读清单</h1><p>让 Agent 检索文献，并将需要全文的论文发送到这个浏览器。</p></div>
+<section id="taskWorkspace" hidden>
+<aside id="queueBlocker" hidden class="attention"><span class="eyebrow">浏览器按顺序处理</span><p id="queueBlockerText"></p><button id="showQueueHead" class="text-button" type="button">查看正在处理的任务 ↗</button></aside>
+<div class="task-heading"><h1 id="taskName"></h1><button id="renameTask" class="icon-button" type="button" aria-label="重命名任务" title="重命名任务">✎</button></div>
+<div class="task-meta"><span id="taskState"></span><button id="copyTaskId" class="text-button" type="button" title="复制任务 ID">复制任务 ID</button></div>
+<details class="paper-list"><summary>查看论文清单</summary><p id="listIdentity"></p><button id="copyPaperList" type="button" class="text-button">复制清单 JSON</button><pre id="paperListJson"></pre></details>
+<div class="progress-label"><span><b id="downloadedCount">0</b> / <span id="totalCount">0</span> 已下载</span><span id="readableCount">0 篇可读</span></div><progress id="taskProgress" max="1" value="0" aria-label="下载进度"></progress>
+<div class="task-controls"><button id="toggleTask" class="primary" type="button">暂停任务</button><span id="taskRule">遇人工验证暂停，成功或跳过后继续。</span></div>
+<aside id="attention" hidden class="attention" aria-live="polite"><span class="eyebrow">需要你的协助</span><p id="attentionText"></p></aside>
+<nav class="filters" aria-label="筛选文献"><button type="button" data-filter="pending" aria-pressed="true">待处理</button><button type="button" data-filter="downloaded" aria-pressed="false">已下载</button><button type="button" data-filter="all" aria-pressed="false">全部</button></nav>
+<div id="papers" aria-live="polite"></div>
+</section>
+<details id="otherTasks" class="task-archive"><summary>其他任务 <span id="otherCount"></span></summary><div id="taskArchiveList"></div></details>
+</section>
+<p id="notice" role="status" aria-live="polite"></p>
+</main>
+<footer><div><span class="connection-dot"></span><span>本机保存核验 · Agent 导出到工作目录</span></div><button id="reconnect" class="text-button" type="button">连接设置</button><code id="browserId" title="当前配对浏览器 UUID"></code><span class="version">0.1.2</span></footer>
+<input id="pdfFile" type="file" accept="application/pdf,.pdf" hidden>
+<dialog id="renameDialog"><form id="renameForm"><span class="eyebrow">TASK NAME</span><h2>给阅读清单起个名字</h2><label>任务名称<input id="renameInput" maxlength="120" required></label><div class="actions"><button type="submit" class="primary">保存名称</button><button id="cancelRename" type="button" class="quiet">取消</button></div></form></dialog>
+<script type="module" src="sidepanel.js"></script>
+</body></html>

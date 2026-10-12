@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "LitScout Download · 文献全文助手",
+  "description": "Connect a local Agent to this browser profile for authorized scholarly PDF retrieval.",
+  "version": "0.1.2",
+  "minimum_chrome_version": "120",
+  "permissions": ["alarms", "debugger", "scripting", "storage", "tabs", "downloads", "unlimitedStorage", "sidePanel", "notifications"],
+  "host_permissions": ["https://*/*", "http://127.0.0.1/*"],
+  "background": {"service_worker": "src/background/worker.js", "type": "module"},
+  "action": {"default_title": "打开 LitScout 文献侧边栏", "default_icon": "assets/notification-icon.png"},
+  "icons": {"128": "assets/notification-icon.png"},
+  "side_panel": {"default_path": "index.html"},
+  "content_security_policy": {"extension_pages": "script-src 'self'; object-src 'none'"}
+}
