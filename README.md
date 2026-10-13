@@ -1,6 +1,6 @@
 # LitScout Download · 文献批量下载
 
-当前版本：**0.1.3**。Agent 可以安装 Skill、准备插件目录、后台启动本机服务并返回配对码。
+当前版本：**0.1.4**。Agent 可以安装 Skill、准备插件目录、后台启动本机服务并返回配对码。
 
 **复制这一句话给 Codex：**
 
@@ -57,7 +57,7 @@ Windows 有 Python Launcher 时也可以使用 `py -3.11 scripts/install.py`；m
 
 ## 只安装 Skill 包也可以
 
-将 Release 中的 `litscout-browser-download-0.1.3-skill.zip` 解压到 Codex skills 目录。包内包含安装助手和公开版 companion 资源，不需要再下载源码包。让 Agent 执行：
+将 Release 中的 `litscout-browser-download-0.1.4-skill.zip` 解压到 Codex skills 目录。包内包含安装助手和公开版 companion 资源，不需要再下载源码包。让 Agent 执行：
 
 ```powershell
 python "<Skill目录>/scripts/setup.py"
@@ -84,7 +84,7 @@ python scripts/install.py --port 57143
 装有 Git 时，可在一个新的空目录中运行：
 
 ```powershell
-git clone --branch v0.1.3 --depth 1 https://github.com/yyy-OPS/litscout-download.git
+git clone --branch v0.1.4 --depth 1 https://github.com/yyy-OPS/litscout-download.git
 cd litscout-download
 python scripts/install.py
 ```

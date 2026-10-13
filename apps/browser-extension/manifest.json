@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "LitScout Download · 文献全文助手",
   "description": "Connect a local Agent to this browser profile for authorized scholarly PDF retrieval.",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "minimum_chrome_version": "120",
   "permissions": ["alarms", "debugger", "scripting", "storage", "tabs", "downloads", "unlimitedStorage", "sidePanel", "notifications"],
   "host_permissions": ["https://*/*", "http://127.0.0.1/*"],
