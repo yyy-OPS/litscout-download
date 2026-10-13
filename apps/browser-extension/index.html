@@ -3,8 +3,9 @@
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>LitScout · 文献全文工作台</title><link rel="stylesheet" href="sidepanel.css"></head>
 <body>
-<header class="masthead"><a class="brand" href="https://litscout.zeabur.app/" target="_blank" rel="noopener noreferrer" title="访问 LitScout 官网"><span class="brand-symbol" aria-hidden="true">L<span>↗</span></span><div><strong>LitScout</strong><span class="eyebrow">批量下载 / DOWNLOAD</span></div></a><span id="connection" class="connection">连接中</span></header>
+<header class="masthead"><a class="brand" href="http://litscout.yangy.cn/" target="_blank" rel="noopener noreferrer" title="访问 LitScout 官网"><span class="brand-symbol" aria-hidden="true">L<span>↗</span></span><div><strong>LitScout</strong><span class="eyebrow">批量下载 / DOWNLOAD</span></div></a><span id="connection" class="connection">连接中</span></header>
 <main>
+<aside class="usage-notice" aria-label="下载使用提醒"><span class="eyebrow">下载使用提醒 / USAGE NOTICE</span><p><span class="usage-title">请遵守文献来源的使用规则。</span>批量或高频下载可能触发访问限制，甚至导致 IP 封禁。请按需、适量使用。因使用本插件产生的相关后果，开发者不承担责任。</p></aside>
 <section class="notification-settings" aria-label="任务提醒设置"><div class="notification-controls"><label><input id="desktopNotifications" type="checkbox" checked>桌面提醒</label><button id="testNotification" type="button" class="text-button">测试提醒 ↗</button></div><p id="notificationStatus" role="status">接收任务和需要人工处理时提醒。</p></section>
 <section id="pairPanel" hidden class="pair-panel"><span class="eyebrow">CONNECT YOUR BROWSER</span><h1>论文在这里，<br>阅读从全文开始。</h1><p>连接本机 Agent，让它把选中的文献交给当前 Edge / Chrome。</p>
 <form id="pairForm"><label>本机服务<input id="endpoint" value="http://127.0.0.1:57133" required></label><label>浏览器名称<input id="name" value="校园网浏览器" maxlength="80" required></label><label>一次性配对码<input id="code" type="password" autocomplete="off" required></label><div class="actions"><button type="submit" class="primary">连接此浏览器 ↗</button><button id="closeSettings" type="button" class="quiet">返回任务</button></div></form></section>
@@ -27,7 +28,7 @@
 </section>
 <p id="notice" role="status" aria-live="polite"></p>
 </main>
-<footer><div><span class="connection-dot"></span><span>本机保存核验 · Agent 导出到工作目录</span></div><button id="reconnect" class="text-button" type="button">连接设置</button><code id="browserId" title="当前配对浏览器 UUID"></code><span class="version">0.1.2</span></footer>
+<footer><div><span class="connection-dot"></span><span>本机保存核验 · Agent 导出到工作目录</span></div><button id="reconnect" class="text-button" type="button">连接设置</button><code id="browserId" title="当前配对浏览器 UUID"></code><span class="version">0.1.3</span></footer>
 <input id="pdfFile" type="file" accept="application/pdf,.pdf" hidden>
 <dialog id="renameDialog"><form id="renameForm"><span class="eyebrow">TASK NAME</span><h2>给阅读清单起个名字</h2><label>任务名称<input id="renameInput" maxlength="120" required></label><div class="actions"><button type="submit" class="primary">保存名称</button><button id="cancelRename" type="button" class="quiet">取消</button></div></form></dialog>
 <script type="module" src="sidepanel.js"></script>

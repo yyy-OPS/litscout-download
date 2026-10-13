@@ -149,7 +149,7 @@ async def main():
                         extension = worker.url.split("/")[2]
                         # Prove cloud unreachability from the actual extension worker.
                         cloud_accessible = await worker.evaluate("""async () => {
-                            try { await fetch('https://litscout.zeabur.app/healthz', {signal: AbortSignal.timeout(5000)}); return true; }
+                            try { await fetch('http://litscout.yangy.cn/healthz', {signal: AbortSignal.timeout(5000)}); return true; }
                             catch { return false; }
                         }""")
                         assert cloud_accessible is False
@@ -192,7 +192,7 @@ async def main():
                         browser = await page.locator("#browserId").inner_text()
                         assert await page.locator("#endpoint").input_value() == f"http://127.0.0.1:{PORT}"
                         assert len(browser) == 36, await page.locator("#notice").inner_text()
-                        assert await page.locator("a.brand").get_attribute("href") == "https://litscout.zeabur.app/"
+                        assert await page.locator("a.brand").get_attribute("href") == "http://litscout.yangy.cn/"
                         assert await page.locator("a.brand").get_attribute("rel") == "noopener noreferrer"
                         # No extension UI is open: native background alerts must still work.
                         await page.goto("about:blank")

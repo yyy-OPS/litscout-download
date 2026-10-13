@@ -6,7 +6,7 @@
 
 `scripts/package_release.py` 使用发布白名单生成源码、扩展、下载 Skill 三个 ZIP 及 SHA256SUMS。Skill 包内含公开服务和插件 companion.zip 及其校验摘要，可以自行配置服务。源码包提供 `python scripts/install.py` 一键安装。当前不包含签名 EXE，不需要部署云端服务。
 
-发布命令为 `python scripts/package_release.py`，输出 `dist/0.1.2`。公开仓库为 <https://github.com/yyy-OPS/litscout-download>。README、MIT LICENSE、完整下载版源码和 Release 资产一起提供。脚本在发现 .git 时要求先单独检查历史，可从审阅过的干净源码副本生成发布包；只允许扫描通过的源码包进入独立公开仓库。
+发布命令为 `python scripts/package_release.py`，输出 `dist/0.1.3`。公开仓库为 <https://github.com/yyy-OPS/litscout-download>。README、MIT LICENSE、完整下载版源码和 Release 资产一起提供。脚本在发现 .git 时要求先单独检查历史，可从审阅过的干净源码副本生成发布包；只允许扫描通过的源码包进入独立公开仓库。
 
 发布前运行自动测试，再运行打包脚本；它检查文件清单、内容、禁止文件和 ZIP CRC，不包含真实文献、SQLite、个人路径、配对令牌、环境密钥和私有云端目录。若未来要提交 GitHub，先在该独立目录检查 `git status` 和暂存差异，确认最终公开文件。自动扫描不代替人工审查。
 

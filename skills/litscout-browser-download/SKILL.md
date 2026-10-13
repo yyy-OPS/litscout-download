@@ -2,7 +2,7 @@
 name: litscout-browser-download
 description: Set up LitScout Download locally and return a browser pairing code, then batch-download selected papers through Edge or Chrome, handle human verification, and export verified PDFs to a research workspace. No cloud credentials required.
 metadata:
-  version: 0.1.2
+  version: 0.1.3
 ---
 
 # LitScout Download · 浏览器文献下载

@@ -8,7 +8,7 @@ from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.1.2"
+VERSION = "0.1.3"
 TOP_FILES = {"LICENSE", "README.md", "THIRD_PARTY_NOTICES.md", "pyproject.toml", ".gitignore", "requirements-runtime.txt"}
 TREES = {"litscout_download", "apps", "skills", "scripts", "tests", "docs"}
 EXCLUDED = {".git", ".venv", "__pycache__", ".pytest_cache", "node_modules"}

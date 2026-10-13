@@ -206,7 +206,7 @@ def make_app(root=None, agent_token=None, port=57133, download_root=None):
 
     @app.get("/healthz")
     async def health():
-        return {"service": "litscout-download", "version": "0.1.2"}
+        return {"service": "litscout-download", "version": "0.1.3"}
 
     @app.post("/v1/pair-codes", dependencies=[Depends(agent)])
     async def pair_code():
